@@ -1,18 +1,21 @@
-# run = "pip install . && run"
 modules = ["python-3.10"]
+run = "cd src && uvicorn truck_agent.main:app"
 
 [env]
 PYTHONUNBUFFERED = "1"
 
 [nix]
 channel = "stable-24_05"
-pkgs = ["python310Packages.pip"]
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix"]
 
 [deployment]
-run = ["sh", "-c", "pip install . && run"]
+run = [
+  "sh",
+  "-c",
+  "pip install -r requirements.txt && cd src && uvicorn truck_agent.main:app",
+]
 
 [[ports]]
 localPort = 8080
