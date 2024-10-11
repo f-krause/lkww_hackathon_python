@@ -1,5 +1,5 @@
-modules = ["python-3.10"]
-run = "pip install . && run"
+modules = ["python-3.12"]
+run = "run"
 
 [env]
 PYTHONUNBUFFERED = "1"
