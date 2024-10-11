@@ -1,4 +1,4 @@
-# run = "pip install . && run"
+run = "pip install . && run"
 modules = ["dotnet-7.0"]
 
 [env]
