@@ -1,4 +1,4 @@
-run = "pip install . && run"
+# run = "pip install . && run"
 modules = ["python-3.10"]
 
 [env]
@@ -12,7 +12,7 @@ pkgs = ["python310Packages.pip"]
 requiredFiles = [".replit", "replit.nix"]
 
 [deployment]
-run = ["sh", "-c", "pip install . && python3 main.py"]
+run = ["sh", "-c", "pip install . && run"]
 
 [[ports]]
 localPort = 8080
