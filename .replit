@@ -1,19 +1,18 @@
 run = "pip install . && run"
-modules = ["dotnet-7.0"]
+modules = ["python-3.10"]
 
 [env]
-DOTNET_NOLOGO = "1"
-DOTNET_CLI_TELEMETRY_OPTOUT = "1"
-DOTNET_CLI_HOME = "$XDG_CACHE_HOME"
+PYTHONUNBUFFERED = "1"
 
 [nix]
 channel = "stable-24_05"
+pkgs = ["python310Packages.pip"]
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix"]
 
 [deployment]
-run = ["run"]
+run = ["sh", "-c", "pip install . && python3 main.py"]
 
 [[ports]]
 localPort = 8080
