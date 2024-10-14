@@ -36,16 +36,15 @@ class DecideResponse(BaseModel):
     command: Literal["ROUTE", "DELIVER", "SLEEP"]
     argument: Union[str, int, None] = None
 
-# The world map can be downloaded by a truck agent from https://github.com/WALTER-GROUP/hackathon-sustainable-logistics/blob/main/data/map.json during a simulation run.
-# It is not required to download it, but a team might be able to get some useful  information from the map to optimize their truck agents decisions.
-# To make individual decide requests as fast as possible, it is better to download the map at the very beginning, when the agent starts up,
-# otherwise the simulation might decide that the truck is reacting too slow and exclude it from the current simulation run.
 
+# The world map data can be found in src/resources/map.json
+# Also see src/truck_agent/map.py for parsing the file
 class Road(BaseModel):
     dest: str
     km: float
     kmh: float
     major: bool
+
 
 class Location(BaseModel):
     city: str
