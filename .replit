@@ -1,5 +1,5 @@
 modules = ["python-3.12"]
-run = "pip install . && run"
+run = "run"
 
 [env]
 PYTHONUNBUFFERED = "1"
@@ -11,9 +11,8 @@ channel = "stable-24_05"
 requiredFiles = [".replit", "replit.nix"]
 
 [deployment]
-run = ["sh", "-c", "pip install . && run"]
+run = ["sh", "-c", "pip install -r requirements.txt && pip install . && run"]
 
 [[ports]]
 localPort = 8080
 externalPort = 80
-exposeLocalhost = true
