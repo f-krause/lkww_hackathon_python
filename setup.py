@@ -16,7 +16,7 @@ setup(
     long_description=(this_directory / "README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     python_requires=">=3.10, <4",
-    install_requires=["fastapi", "uvicorn", "request", "httpx", "pytest-runner", "pytest"],
+    install_requires=["fastapi", "uvicorn", "requests", "httpx", "pytest-runner", "pytest"],
     entry_points={
         "console_scripts": ["run=truck_agent.main:main"],
     },
