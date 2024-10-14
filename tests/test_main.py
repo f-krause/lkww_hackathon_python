@@ -13,7 +13,7 @@ def test_sample_decide_request():
     response = client.post(
         "/decide",
         headers={"Content-Type": "application/json"},
-        data=payload,
+        content=payload,
     )
     assert response.status_code == 200
     assert response.json() == {
